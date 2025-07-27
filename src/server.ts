@@ -1,5 +1,6 @@
 import {
   AngularNodeAppEngine,
+  CommonEngine,
   createNodeRequestHandler,
   isMainModule,
   writeResponseToNodeResponse,
@@ -7,12 +8,14 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { render } from "@netlify/angular-runtime/common-engine.mjs"
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+const commonEngine = new CommonEngine();
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -64,3 +67,10 @@ if (isMainModule(import.meta.url)) {
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
 export const reqHandler = createNodeRequestHandler(app);
+
+export async function netlifyCommonEngineHandler(
+  req: Request,
+  res: Response,
+) {
+  return await render(commonEngine);
+}
