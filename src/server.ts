@@ -8,7 +8,7 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { render } from "@netlify/angular-runtime/common-engine.mjs"
+import { render } from "@netlify/angular-runtime/common-engine"
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -71,6 +71,7 @@ export const reqHandler = createNodeRequestHandler(app);
 export async function netlifyCommonEngineHandler(
   req: Request,
   res: Response,
+  context :any
 ) {
   return await render(commonEngine);
 }

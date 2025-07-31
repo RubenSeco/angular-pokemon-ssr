@@ -1,0 +1,16 @@
+<div class='grid gap-3 grid-cols-1 sm:grid-cols-3 md:grid-cols-5'>
+
+  <!-- TODO: Pokemons card -->
+
+  @for (pokemon of pokemons(); track pokemon.id) {
+
+  <pokemon-card [pokemon]="pokemon"/>
+
+  }
+
+  <!-- TODO: No pokemons found -->
+  <!-- <div class='col-span-5 text-center border-white h-28 justify-center'>
+    No hay pokemons para mostrar
+  </div> -->
+
+</div>

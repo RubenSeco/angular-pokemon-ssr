@@ -1,0 +1,13 @@
+<div class='bg-blue-500 h-44 bg-opacity-25 rounded-lg flex flex-col p-4 items-center justify-center cursor-pointer drop-shadow-md drop-shadow-blue-500'>
+
+  <img [src]="pokemonImage()"
+       [alt]="pokemon().name"
+       width='96px'
+       height='96px'
+       class='w-24 h-24'>
+
+
+  <div class='text-center'>
+    <h2 class='text-center text-xl font-bold capitalize'>{{pokemon().name}}</h2>
+  </div>
+</div>
