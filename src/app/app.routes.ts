@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
   {
@@ -7,8 +8,10 @@ export const routes: Routes = [
   },
   {
     path: "pokemon/:id",
-    // loadComponent: () => import("./pages/pokemon/pokemon-page.component")
-    loadComponent: () => import("./pages/pokemon/pokemon-page.component").then(m => m.default)
+    loadComponent: () => import("./pages/pokemon/pokemon-page.component"),
+    data: {
+      renderMode: RenderMode.Prerender
+    }
   },
   {
     path: "about",
