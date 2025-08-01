@@ -10,7 +10,7 @@ export const routes: Routes = [
     path: "pokemon/:id",
     loadComponent: () => import("./pages/pokemon/pokemon-page.component"),
     data: {
-      renderMode: RenderMode.Prerender
+      renderMode: RenderMode.Client
     }
   },
   {
