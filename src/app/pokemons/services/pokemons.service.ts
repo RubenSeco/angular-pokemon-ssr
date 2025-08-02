@@ -34,6 +34,8 @@ export class PokemonsService {
   public loadPokemon(id: string) {
     return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
+
+  
 }
 
 
