@@ -1,0 +1,5 @@
+
+export const edgeConfig: Config = {
+  path: "/pockemon-ssr",
+  onError: "bypass"
+}
