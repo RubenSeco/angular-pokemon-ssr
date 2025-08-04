@@ -1,6 +1,10 @@
 import { Config } from "@netlify/edge-functions"
 
-export const edgeConfig: Config = {
-  path: "/pockemon-ssr",
+export default async () => {
+  throw new Error("error");
+};
+
+export const config: Config = {
+  path: "/src",
   onError: "bypass"
 }
