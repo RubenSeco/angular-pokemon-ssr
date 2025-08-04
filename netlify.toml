@@ -1,3 +1,4 @@
+import { Config } from "@netlify/edge-functions"
 
 export const edgeConfig: Config = {
   path: "/pockemon-ssr",
