@@ -4,7 +4,7 @@ import { config } from './app/app.config.server';
 import { Config } from "@netlify/edge-functions"
 
 export const edgeConfig: Config = {
-  path: "/hello",
+  path: "/pockemon-ssr",
   onError: "bypass"
 }
 const bootstrap = () => bootstrapApplication(AppComponent, config);
