@@ -7,7 +7,7 @@ command = "ng build --prod"
 from = "/*"
 to = "/index.html"
 status = 200
-[edge_functions]
+[[edge_functions]]
 cache = "manual"
 path = "/scr/*"
 onError = "bypass"
