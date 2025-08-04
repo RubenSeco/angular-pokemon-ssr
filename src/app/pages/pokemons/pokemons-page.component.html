@@ -15,12 +15,13 @@
 <!-- TODO: paginación (siguiente y anterior) -->
 
 <div class='flex justify-between mt-2'>
-  <button (click)="loadPokemons(-1)"
+  <button [routerLink]="['/pokemons/page',currentPage()!-1]"
+          [disabled]="currentPage() === 1"
           class='btn btn-primary cursor-pointer'>
     Anteriores
   </button>
 
-  <button (click)="loadPokemons(+1)"
+  <button [routerLink]="['/pokemons/page',currentPage()!+1]"
           class='btn btn-primary cursor-pointer'>
     Siguientes
   </button>
