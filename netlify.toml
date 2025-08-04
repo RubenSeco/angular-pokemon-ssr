@@ -1,10 +1,6 @@
-import { Config } from "@netlify/edge-functions"
 
-export default async () => {
-  throw new Error("error");
-};
 
-export const config: Config = {
-  path: "/src",
-  onError: "bypass"
-}
+[edge_functions]
+cache = "manual"
+path = "/scr/*"
+onError = "bypass"
