@@ -4,13 +4,13 @@
 
   @for (pokemon of pokemons(); track pokemon.id) {
 
-  <pokemon-card [pokemon]="pokemon"/>
+  <pokemon-card [pokemon]="pokemon" />
 
   }
+  @empty {
 
-  <!-- TODO: No pokemons found -->
-  <!-- <div class='col-span-5 text-center border-white h-28 justify-center'>
+  <div class='col-span-5 text-center border-white h-28 justify-center'>
     No hay pokemons para mostrar
-  </div> -->
-
+  </div>
+  }
 </div>
